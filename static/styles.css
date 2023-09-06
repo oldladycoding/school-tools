@@ -1,0 +1,126 @@
+/* Size and font for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+    font-family: Comic Sans MS, sans-serf;
+}
+
+/* Colors for brand */
+nav .navbar-brand .purple
+{
+    color: #880a9f;
+}
+nav .navbar-brand .pink
+{
+    color: #ea3bb0;
+}
+nav .navbar-brand .Darkpurple
+{
+    color: #320887;
+}
+nav .navbar-brand .blue
+{
+    color: #17C1DA;
+}
+
+/* fonts for menu items */
+.nav-pills .nav-link
+{
+    color: #EFFFD2;
+    background-color: #320887;
+    padding:10px;
+    margin-left:30px;
+    border-radius: 8px;
+}
+
+/* General header config */
+h2
+{
+    font-size: 50px;
+    font-family: palatino;
+    color: #320887;
+}
+h3
+{
+    font-size: 40px;
+    font-family: Comic Sans MS, sans-serf;
+    color: #320887;
+    text-align:left;
+}
+h4
+{
+    font-size: 20px;
+    font-family: palatino;
+    color: #320887;
+    text-align:center;
+}
+/* for all the submit buttons */
+.button
+{
+    font-size: 20px;
+    font-family: Comic Sans MS, sans-serf;
+    color:#ffff;
+    background-color:#B432BF;
+    border-radius: 8px;
+
+}
+/* for the weather page items */
+.box
+{
+    border:1px solid black;
+    width:50%;
+    margin:auto;
+    padding:30px;
+    background:radial-gradient(#EAD8FF,#DE91FF );
+}
+.results
+{
+    font-size: 30px;
+    font-family: Comic Sans MS, sans-serf;
+    text-align:center;
+
+}
+
+/* for the items in the menu page */
+.repas
+{
+    text-align:center;
+}
+.resultats
+{
+    font-size: 15px;
+    font-family: Comic Sans MS, sans-serf;
+    color: #D6DACF;
+    text-align:center;
+}
+.menu
+{
+    font-family: Comic Sans MS, sans-serf;
+    color: #320887;
+    text-align:center;
+    font-size: 40px;
+
+}
+
+.calendar
+{
+    font-size: 20px;
+    width:50%;
+    margin:auto;
+    padding:30px;
+}
+
+/* for the container in the index page */
+.card-title
+{
+    font-family: palatino;
+    color:#320887;
+    text-align:center;
+    font-size: 25px;
+
+}
+.card-text
+{
+    font-size: 15px;
+    font-family: Comic Sans MS, sans-serf;
+}

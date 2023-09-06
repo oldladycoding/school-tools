@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu du jour
+{% endblock %}
+
+{% block main %}
+
+    <div class="menu">Votre menu à la cafétéria aujourd'hui!</div>
+        <br>
+        <h4> Date du  jour: {{ date_jour }} </h4>
+
+    <!-- Calendar form -->
+    <div class="calendar">
+        <form action="/menu" method="POST">
+            <input type="date" name="date_jour">
+            <input type="submit" class="button" value="Soumettre">
+        </form>
+    </div>
+    <!-- Returns result with conditions -->
+    <section class="repas">
+
+        <p class="resultats"> Menu du jour: {{ menu }} </p>
+
+            {% if menu == "W1A" %}
+            <img src="/static/menu/W1A.png" width="50%" height="50%" alt="Menu W1A">
+            {% endif %}
+
+            {% if menu == "W1B" %}
+            <img src="/static/menu/W1B.png"  width="50%" height="50%" alt="Menu W1B">
+            {% endif %}
+
+            {% if menu == "W1C" %}
+            <img src="/static/menu/W1C.png"  width="50%" height="50%"alt="Menu W1C">
+            {% endif %}
+
+            {% if menu == "W1D" %}
+            <img src="/static/menu/W1D.png"  width="50%" height="50%" alt="Menu W1D">
+            {% endif %}
+
+            {% if menu == "W1E" %}
+            <img src="/static/menu/W1E.png"  width="50%" height="50%"alt="Menu W1E">
+            {% endif %}
+
+            {% if menu == "W2A" %}
+            <img src="/static/menu/W2A.png"  width="50%" height="50%" alt="Menu W2A">
+            {% endif %}
+
+            {% if menu == "W2B" %}
+            <img src="/static/menu/W2B.png"  width="50%" height="50%"alt="Menu W2B">
+            {% endif %}
+
+            {% if menu == "W2C" %}
+            <img src="/static/menu/W2C.png"  width="50%" height="50%" alt="Menu W2C">
+            {% endif %}
+
+            {% if menu == "W2D" %}
+            <img src="/static/menu/W2D.png"  width="50%" height="50%" alt="Menu W2D">
+            {% endif %}
+
+            {% if menu == "W2E" %}
+            <img src="/static/menu/W2E.png"  width="50%" height="50%" alt="Menu W2E">
+            {% endif %}
+
+            {% if menu == "W3A" %}
+            <img src="/static/menu/W3A.png"  width="50%" height="50%" alt="Menu W3A">
+            {% endif %}
+
+            {% if menu == "W3B" %}
+            <img src="/static/menu/W3B.png"  width="50%" height="50%" alt="Menu W3B">
+            {% endif %}
+
+            {% if menu == "W3C" %}
+            <img src="/static/menu/W3C.png"  width="50%" height="50%"alt="Menu W3C">
+            {% endif %}
+
+            {% if menu == "W3D" %}
+            <img src="/static/menu/W3D.png"  width="50%" height="50%" alt="Menu W3D">
+            {% endif %}
+
+            {% if menu == "W3E" %}
+            <img src="/static/menu/W3E.png" width="50%" height="50%" alt="Menu W3E">
+            {% endif %}
+
+            {% if menu == "W4A" %}
+            <img src="/static/menu/W4A.png"  width="50%" height="50%"alt="Menu W4A">
+            {% endif %}
+
+            {% if menu == "W4B" %}
+            <img src="/static/menu/W4B.png"  width="50%" height="50%" alt="Menu W4B">
+            {% endif %}
+
+            {% if menu == "W4C" %}
+            <img src="/static/menu/W4C.png"  width="50%" height="50%"alt="Menu W4C">
+            {% endif %}
+
+            {% if menu == "W4D" %}
+            <img src="/static/menu/W4D.png"  width="50%" height="50%"alt="Menu W4D">
+            {% endif %}
+
+            {% if menu == "W4E" %}
+            <img src="/static/menu/W4E.png"  width="50%" height="50%" alt="Menu W4E">
+            {% endif %}
+
+            {% if menu == "W5A" %}
+            <img src="/static/menu/W5A.png"  width="50%" height="50%"alt="Menu W5A">
+            {% endif %}
+
+            {% if menu == "W5B" %}
+            <img src="/static/menu/W5B.png"  width="50%" height="50%"alt="Menu W5B">
+            {% endif %}
+
+            {% if menu == "W5C" %}
+            <img src="/static/menu/W5C.png"  width="50%" height="50%"alt="Menu W5C">
+            {% endif %}
+
+            {% if menu == "W5D" %}
+            <img src="/static/menu/W5D.png"  width="50%" height="50%"alt="Menu W5D">
+            {% endif %}
+
+            {% if menu == "W5E" %}
+            <img src="/static/menu/W5E.png"  width="50%" height="50%"alt="Menu W5E">
+            {% endif %}
+
+            {% if menu == "" %}
+            <div><b>Vous avez entré une date en dehors des dates d'ouverture de la cafétéria.</b> </div>
+                <img src="static/confused.png"  width="30%" height="30%">
+            {% endif %}
+    </section>
+        <h2>Bon Apétit!</h2>
+{% endblock %}

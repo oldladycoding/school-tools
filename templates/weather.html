@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Que devrais-tu porter actuellement?
+{% endblock %}
+
+{% block main %}
+    <h2>Que devrais-tu porter actuellement?</h2>
+    <br>
+    <h4>Choisir une ville dans le menu</h4>
+    <!-- Form to choose the city and get the realtime weather conditions -->
+    <form action="/weather"  method="post">
+        <input list="city" name="city" placeholder="Ville">
+        <datalist id="city">
+            <option value="Pointe-Calumet">
+            <option value="Saint-Jerome">
+            <option value="Nunavut">
+            <option value="Montreal">
+            <option value="Chicoutimi">
+            <option value="Vancouver"></option>
+        </datalist>
+        <input type="submit" class="button" value="Soumettre">
+    </form>
+
+    <br>
+    <!-- Results returned according to different conditions -->
+    <section class="box">
+        <div class="results">
+
+        {% if city == city %}
+        <div>Pour la ville de: <b>{{ city }}</b> </div>
+        {% endif %}
+
+        {% if weather == weather %}
+        <div>Les conditions extérieures: <b> {{ weather }} </b></div>
+        {% endif %}
+
+        {% if temperature == temperature %}
+        <div>La température est: <b>{{ temperature }} °C</b></div>
+        <div>La température ressentie est: <b>{{ feel }} °C</b></div>
+         {% endif %}
+
+        {% if clothing == "level 1" %}
+        <div>Suggestion de vêtement: <b>Chandail à manches courtes</b></div>
+        <img src="/static/weather/t-shirt.png" width="200" height="200" alt="Manches courtes">
+        {% endif %}
+
+        {% if clothing == "level 2" %}
+        <div>Suggestion de vêtement: <b>Chandail à manches longues</b></div>
+        <img src="/static/weather/long_sleeve.png"  width="200" height="200" alt="Manches longues">
+        {% endif %}
+
+        {% if clothing == "level 3" %}
+        <div>Suggestion de vêtement: <b>Manteau léger OU double coton ouaté</b></div>
+        <img src="/static/weather/jacket.png"  width="200" height="200" alt="Manteau léger">
+        <img src="/static/weather/hoodie.png"  width="200" height="200" alt="Coton ouaté">
+        {% endif %}
+
+        {% if clothing == "level 4" %}
+        <div>Suggestion de vêtement: <b>Un bon manteau!</b></div>
+        <img src="/static/weather/winterCoat.png"  width="200" height="200" alt="Manteau chaud">
+        {% endif %}
+
+        </div>
+    </section>
+
+{% endblock %}

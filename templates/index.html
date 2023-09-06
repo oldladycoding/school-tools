@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    <h1>Outils pour l'école</h1>
+{% endblock %}
+
+{% block main %}
+    <h2>Outils</h2>
+    <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="/static/1.png" alt="Emoji confus">
+          <div class="card-body">
+            <a class="card-title" href="/weather">Quoi porter?</a>
+            <p class="card-text">Guide pour savoir comment s'habiller avant de sortir dehors! La suggestion vestimentaire est programmée pour la météo actuelle.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="/static/2.png" alt="Card image cap">
+          <div class="card-body">
+            <a class="card-title" href="/menu">Au Menu!</a>
+            <p class="card-text">Découvre quels sont les menus pour la cafétéria aujourd'hui!</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="/static/3.png" alt="Card image cap">
+          <div class="card-body">
+            <a class="card-title" href="/construction">Récréations - Durée!</a>
+            <p class="card-text">Outil pour savoir la durée recommandée de la récréation selon la température ressentie actuelle. Les données sont tirées de la charte publiée par la santé publique du Québec.</p>
+          </div>
+      </div>
+{% endblock %}
