@@ -203,7 +203,9 @@ def chart():
     elif 40.0 <= feel <= 47.9:
         time = "orange"
     elif -81.9 <= feel <= -28.9 or 46.9 <= feel <= 58.0:
-        time = "red"
+        time = "red-1"
+    elif 46.9 <= feel <= 58.0:
+        time = "red-2"
         return render_template("chart.html", weather=weather, temperature=temperature, feel=feel, time=time, city=city)
 
     else:
