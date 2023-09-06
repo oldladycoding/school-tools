@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Charte des températures
+{% endblock %}
+
+{% block main %}
+    <h2>Combien de temps devrais-tu rester dehors?</h2>
+    <br>
+    <h4>Choisir une ville dans le menu</h4>
+    <!-- Form to choose the city and get the realtime weather conditions -->
+    <form action="/chart"  method="post">
+        <input list="city" name="city" placeholder="Ville">
+        <datalist id="city">
+            <option value="Pointe-Calumet">
+            <option value="Saint-Jerome">
+            <option value="Nunavut">
+            <option value="Montreal">
+            <option value="Chicoutimi">
+            <option value="Vancouver"></option>
+        </datalist>
+        <input type="submit" class="button" value="Soumettre">
+    </form>
+
+    <br>
+    <!-- Results returned according to different conditions -->
+    <section class="box">
+        <div class="results">
+
+        {% if city == city %}
+        <div>Pour la ville de: <b>{{ city }}</b> </div>
+        {% endif %}
+
+        {% if weather == weather %}
+        <div>Les conditions extérieures: <b> {{ weather }} </b></div>
+        {% endif %}
+
+        {% if temperature == temperature %}
+        <div>La température est: <b>{{ temperature }} °C</b></div>
+        <div>La température ressentie est: <b>{{ feel }} °C</b></div>
+        {% endif %}
+
+        {% if time == "green" %}
+        <div>Aucune restriction de temps!  <b>Postes des vêtements appropriés!</b></div>
+        {% endif %}
+
+        {% if clothing == "jaune" %}
+        <div>Suggestion de vêtement: <b>Chandail à manches longues</b></div>
+        {% endif %}
+
+        {% if clothing == "level 3" %}
+        <div>Suggestion de vêtement: <b>Manteau léger OU double coton ouaté</b></div>
+        {% endif %}
+
+        {% if clothing == "level 4" %}
+        <div>Suggestion de vêtement: <b>Un bon manteau!</b></div>
+        {% endif %}
+
+        </div>
+    </section>
+
+{% endblock %}

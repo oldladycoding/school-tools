@@ -165,6 +165,49 @@ def menu():
         elif date_jour not in W1A + W1B + W1C + W1D + W1E + W2A + W2B + W2C + W2D + W2E + W3A + W3B + W3C + W3D + W3E + W4A + W4B + W4C + W4D + W4E + W5A + W5B + W5C + W5D + W5E:
                 menu = ""
     return render_template("menu.html", menu=menu, date_jour=date_jour)
+    
+@app.route('/chart', methods=['GET', 'POST'])
+def chart():
+
+#Initiate all the variables
+    city = None
+    temperature = None
+    weather = None
+    feel = None
+    time = None
+
+
+#Get input - city name -  from dorpdown form
+    if request.method =='POST':
+        city = request.form.get("city")
+
+    API_KEY = "46e914b64cad62ed6a7405d08a9b999a"
+    BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+
+#Insert user input in the API request
+    request_url = f"{BASE_URL}q={city}&lang=fr&units=metric&appid={API_KEY}"
+    response = requests.get(request_url)
+
+    if response.status_code == 200:
+        data = response.json()
+        weather = data["weather"][0]["description"]
+        temperature = round(data["main"]["temp"],1)
+        feel = round(data["main"]["feels_like"],1)
+
+#determine recommended time outside according to temperature felt criteria
+        time = "Choice"
+    if -15.9 <= feel <= 4.0 or 4.0 <= feel <= 29.9:
+        time = "green"
+    elif -27.9 <= feel <=-16.0 or 30.9 <= feel <= 39.9:
+        time = "yellow"
+    elif 40.0 <= feel <= 47.9:
+        time = "orange"
+    elif -81.9 <= feel <= -28.9 or 46.9 <= feel <= 58.0:
+        time = "red"
+        return render_template("chart.html", weather=weather, temperature=temperature, feel=feel, time=time, city=city)
+
+    else:
+        return render_template("apology.html")
 
 if __name__ == '__main__':
     app.run()
