@@ -9,14 +9,15 @@
     <br>
     <h4>Choisir une ville dans le menu</h4>
     <!-- Form to choose the city and get the realtime weather conditions -->
-    <form action="/chart"  method="post">
+    <form action="/chart"  method="POST">
         <input list="city" name="city" placeholder="Ville">
         <datalist id="city">
             <option value="Pointe-Calumet">
             <option value="Saint-Jerome">
-            <option value="Nunavut">
+            <option value="Miami">
             <option value="Montreal">
             <option value="Chicoutimi">
+            <option value="Antarctic">
             <option value="Vancouver"></option>
         </datalist>
         <input type="submit" class="button" value="Soumettre">
@@ -41,23 +42,29 @@
         {% endif %}
 
         {% if time == "green" %}
-        <div>Aucune restriction de temps! On joue confortablement dehors! <b>Porte des vêtements appropriés!</b></div>
+        <div>Aucune restriction de temps! On joue confortablement dehors! <br><b>Porte des vêtements appropriés!</b></br></div>
+        <img src="/static/recreation/green.png" width="500" height="350" alt="green">
         {% endif %}
 
         {% if time == "yellow" %}
-        <div>Léger inconfort! On surveille les signes<b>Porte des vêtements appropriés!</b></div>
+        <div>Léger inconfort! On surveille les signes</div>
+            <div><br><b>Porte des vêtements appropriés!</b></br></div>
+            <img src="/static/recreation/yellow.png" width="500" height="350" alt="yellow">
         {% endif %}
 
         {% if time == "orange" %}
-        <div>Évite les efforts! Joue dans les zones ombragées, bois fréquemment.  <b>Porte des vêtements appropriés!</b></div>
+        <div>Évite les efforts! Joue dans les zones ombragées, bois fréquemment. <br><b>Porte des vêtements appropriés!</b></br></div>
+        <img src="/static/recreation/orange.png" width="500" height="350" alt="Orange">
         {% endif %}
 
         {% if time == "red-1" %}
-        <div>Il est préférable de rester à l'intérieur!<b>Bonne récréation!</b></div>
+        <div>Il est préférable de rester à l'intérieur!<br><b>Bonne récréation!</b></br></div>
+        <img src="/static/recreation/red-1.png" width="500" height="350" alt="Rouge">
         {% endif %}
 
         {% if time == "red-2" %}
-        <div>Coup de chaleur possible!!<b>On relaxe et on boit beaucoup d'eau!</b></div>
+        <div>Coup de chaleur possible!!<br><b>On relaxe et on boit beaucoup d'eau!</b></br></div>
+        <img src="/static/recreation/red-2.png" width="500" height="350" alt="Rouge">
         {% endif %}
 
         </div>

@@ -196,20 +196,23 @@ def chart():
 
 #determine recommended time outside according to temperature felt criteria
         time = "Choice"
-    if -15.9 <= feel <= 4.0 or 4.0 <= feel <= 29.9:
-        time = "green"
-    elif -27.9 <= feel <=-16.0 or 30.9 <= feel <= 39.9:
-        time = "yellow"
-    elif 40.0 <= feel <= 47.9:
-        time = "orange"
-    elif -81.9 <= feel <= -28.9 or 46.9 <= feel <= 58.0:
-        time = "red-1"
-    elif 46.9 <= feel <= 58.0:
-        time = "red-2"
+        if -15.9 <= feel <= 29.9:
+            time = "green"
+        elif 30.9 <= feel <= 39.9:
+            time = "yellow"
+        elif -27.9 <= feel <= -16.0:
+            time = "yellow" 
+        elif 40.0 <= feel <= 47.9:
+            time = "orange"
+        elif -81.9 <= feel <= -28.9:
+            time = "red-1"
+        elif 46.9 <= feel <= 58.0:
+            time = "red-2"
         return render_template("chart.html", weather=weather, temperature=temperature, feel=feel, time=time, city=city)
 
     else:
         return render_template("apology.html")
 
 if __name__ == '__main__':
+    app.debug = True
     app.run()
