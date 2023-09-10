@@ -1,6 +1,9 @@
 import requests
 import json
 import re
+import datetime
+import time
+import winsound
 
 
 from flask import Flask, render_template, request
@@ -212,6 +215,27 @@ def chart():
 
     else:
         return render_template("apology.html")
+    
+@app.route('/bell')
+def bell():
+    while True:
+        #refreshed the time every second
+        time.sleep(1)
+        #Gets the current time
+        actual_time = datetime.datetime.now()
+        cur_time = actual_time.strftime("%H:%M:%S")
+        cur_date = actual_time.strftime("%d/%m/%Y")
+        msg="Current Time: "+str(cur_time)
+        print(msg)
+        if cur_time == set_alarm_timer:
+            winsound.PlaySound("Music.wav",winsound.SND_ASYNC)
+            break
+ 
+def get_alarm_time():
+    alarm_set_time = f"{hour.get()}:{min.get()}:{sec.get()}"
+    Alarm(alarm_set_time)
+    
+    return render_template("bell.html")
 
 if __name__ == '__main__':
     app.debug = True
