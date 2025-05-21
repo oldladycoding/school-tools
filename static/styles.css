@@ -1,23 +1,25 @@
-/* Size and font for brand */
-nav .navbar-brand
+nav .navbar-brand .main
 {
-    font-size: xx-large;
-    font-family: Comic Sans MS, sans-serf;
+  font-size: xx-large !important;
+  font-family: Comic Sans MS, sans-serif !important;
+  color: #320887 !important;
 }
 
+nav .navbar-brand .alt1 {
+  font-size: small !important;
+  font-family: Comic Sans MS, sans-serif !important;
+  color: #880a9f !important;
+}
+
+nav .navbar-brand .alt2 {
+  font-size: small !important;
+  font-family: Comic Sans MS, sans-serif !important;
+  color: #ea3bb0 !important;
+}
+
+
 /* Colors for brand */
-nav .navbar-brand .purple
-{
-    color: #880a9f;
-}
-nav .navbar-brand .pink
-{
-    color: #ea3bb0;
-}
-nav .navbar-brand .Darkpurple
-{
-    color: #320887;
-}
+
 nav .navbar-brand .blue
 {
     color: #17C1DA;
@@ -27,6 +29,7 @@ nav .navbar-brand .blue
 .nav-pills .nav-link
 {
     color: #530373;
+    font-family: Monaco, sans-serif;
     background-color: #c1fc5b;
     padding:10px;
     margin-left:30px;
@@ -37,26 +40,26 @@ nav .navbar-brand .blue
 h1
 {
     font-size: 60px;
-    font-family: palatino;
+    font-family: Monaco, sans-serif;
     color: #320887;
 }
 h2
 {
     font-size: 50px;
-    font-family: palatino;
+    font-family: Monaco, sans-serif;
     color: #320887;
 }
 h3
 {
     font-size: 40px;
-    font-family: Comic Sans MS, sans-serf;
+    font-family: Monaco, sans-serif;
     color: #320887;
     text-align:left;
 }
 h4
 {
     font-size: 20px;
-    font-family: palatino;
+    font-family: Monaco, sans-serif;
     color: #320887;
     text-align:center;
 }
@@ -64,7 +67,7 @@ h4
 .button
 {
     font-size: 20px;
-    font-family: Comic Sans MS, sans-serf;
+    font-family: Comic Sans MS, sans-serif;
     color:#ffff;
     background-color:#B432BF;
     border-radius: 8px;
@@ -82,7 +85,7 @@ h4
 .results
 {
     font-size: 30px;
-    font-family: Comic Sans MS, sans-serf;
+    font-family: Comic Sans MS, sans-serif;
     text-align:center;
 
 }
@@ -95,13 +98,13 @@ h4
 .resultats
 {
     font-size: 15px;
-    font-family: Comic Sans MS, sans-serf;
+    font-family: Comic Sans MS, sans-serif;
     color: #D6DACF;
     text-align:center;
 }
 .menu
 {
-    font-family: Comic Sans MS, sans-serf;
+    font-family: Comic Sans MS, sans-serif;
     color: #320887;
     text-align:center;
     font-size: 40px;
@@ -119,7 +122,7 @@ h4
 /* for the container in the index page */
 .card-title
 {
-    font-family: palatino;
+    font-family: Monaco, sans-serif;
     color:#320887;
     text-align:center;
     font-size: 25px;
@@ -128,5 +131,5 @@ h4
 .card-text
 {
     font-size: 15px;
-    font-family: Comic Sans MS, sans-serf;
+    font-family: Comic Sans MS, sans-serif;
 }
